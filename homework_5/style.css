@@ -139,6 +139,11 @@ select {
     border: 1px solid #A3A3A5;
     box-sizing: border-box;
 }
+.cir:hover {
+    background-color: #8AD2FB;
+    border: none;
+    color: white;
+}
 
 #btn2 {
     width: 100%;
@@ -158,20 +163,17 @@ select {
     background-color: #E5E5E5;
 }
 
+#btn2:hover {
+    background-color: #8AD2FB;
+}
+
 .price {
     text-align: right;
     margin-top: 20px;
+    font-family: 'Croissant One', cursive;
 }
 
-button:hover {
-    animation-name: background-color;
-    animation-duration: 500ms;
- }
+button {
+    border: none; 
 
-    @keyframes background-color {
-        100% {
-        background-color:#8AD2FB;
-        color: white;
-    
-        }
-    }
+}
