@@ -11,8 +11,8 @@ h1 {
 }
 
 .responsive {
-    width: auto%;
-    max-height: 250px;
+    max-width: 200px;
+    max-height: auto;
 }
 
 footer {
@@ -39,47 +39,13 @@ footer {
 
 }
 
-.home-landing {
-    display:grid;
-    grid-template-columns: 50% 50%;
-    grid-gap: 50px;
-    background-image: url(Assets/8636087627_40f957c660_o.jpeg);
-    width: 100%;
-    height: 800px;
-
-}
-
-.column a{
-}
-.column b{
-    background-color: rgba(255, 255, 255, 0.85);
-    font-family: Croissant One;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 48px;
-    line-height: 68px;
-}
-
-.home-text{
-    width: 405px;
-    height: 124px;
-    left: 803px;
-    top: 366px;
-
-    font-family: SF Pro Display;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 35px;
-}
-
+/* SHOP PAGE CSS  */
 
 .wrapper {
     display:grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
-    background-color: aqua;
-    margin-left: 80px;
-    margin-right: 80px;
+    justify-content: center;
+    align-items: center;
 }
 
 .box {
@@ -87,6 +53,7 @@ footer {
     background-color: #FFFFFF;
     padding-top: 10px;
     text-align: center;
+    justify-content: center;
 }
 
 .frame{
@@ -113,7 +80,6 @@ footer {
 .order-thumbail{
     margin-top: 10px;
     margin-bottom: 10px;
-    height:250px;
 }
 
 .order-glaze {
@@ -185,6 +151,7 @@ select {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
 
+    text-align: center;
     font-style: normal;
     font-weight: bold;
 
@@ -193,6 +160,8 @@ select {
 
     color: #F4F4F4;
     background-color: #E5E5E5;
+
+    border: none;
 }
 
 #btn2:hover {
@@ -240,4 +209,149 @@ button {
 
 #logo {
     margin:10px;
+}
+
+/* HOME PAGE CSS */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    max-height: 75px;
+    width: 100%;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    align-items: center;
+    margin: 0px; 15px;
+}
+
+li {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: lighter;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+h2 {
+    font-family: 'Croissant One', cursive;
+    font-size: 32px;
+    color: black;
+}
+
+
+.home-button {
+    font-family: Croissant One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding:15px 15px;
+    height: 50px;
+
+    color: #000000;
+    background-color: transparent;
+
+    border: 1px solid #000000;
+
+}
+
+.home-button:hover {
+    font-family: Croissant One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding:15px;
+    height: 50px;
+    vertical-align: middle;
+
+    background-color: #8AD2FB;
+    color: #FFFFFF;
+
+    border: 1px solid #8AD2FB;
+
+}
+
+#nav-logo {
+    justify-content: flex-start;
+}
+
+header {
+    padding: 0px 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#active {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    vertical-align: middle;
+    padding: 20px;
+    color: #8AD2FB;
+}
+
+html {
+    height: 100%;
+}
+
+.home-body {
+    height: 100%;
+}
+
+.home-container {
+    height: 100%;
+    background-image: url(Assets/home-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#nav-color
+{
+    background-color: white;
+}
+
+.landing-container {
+    display:grid;
+    grid-template-columns: 60% 40%;
+    height: calc(100% - 75px);
+    align-content: center;
+    vertical-align: middle;
+}
+.landing-column-b {
+    background: rgba(255, 255, 255, 0.85);
+    margin: 0% 5% 0% 0%;
+    padding: 10% 10% 10% 10%;
+    text-align: left;
+    font-family: 'Croissant One', cursive;
+    font-size: 48px;
+    color: black;
+
+
+}
+.body-text {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: left;
+    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
 }
