@@ -10,6 +10,24 @@ h1 {
     margin-bottom: 30px;
 }
 
+p {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: left;
+    color: #000000;
+
+}
+
+hr {
+    border: 1px solid grey;
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .responsive {
     max-width: 200px;
     max-height: auto;
@@ -34,8 +52,10 @@ footer {
     text-align: center;
     padding-top: 35px;
     padding-bottom: 20px;
+    margin-top: 40px;
 
     color: #646464;
+    margin-bottom: 20px;
 
 }
 
@@ -45,7 +65,8 @@ footer {
     display:grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
     justify-content: center;
-    align-items: center;
+    align-content: center;
+    margin: 0px 30px;
 }
 
 .box {
@@ -218,10 +239,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 75px;
-    max-height: 75px;
     width: 100%;
-    /* padding-left: 20px;
-    padding-right: 20px; */
 }
 
 .nav-items {
@@ -230,7 +248,7 @@ nav {
     flex-direction: row;
     vertical-align: middle;
     align-items: center;
-    margin: 0px; 15px;
+    margin: 0px 15px;
 }
 
 li {
@@ -300,8 +318,8 @@ header {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: bold;
+    text-decoration: underline;
     vertical-align: middle;
-    padding: 20px;
     color: #8AD2FB;
 }
 
@@ -331,6 +349,7 @@ html {
     height: calc(100% - 75px);
     align-content: center;
     vertical-align: middle;
+    max-width: 100%;
 }
 .landing-column-b {
     background: rgba(255, 255, 255, 0.85);
@@ -353,5 +372,55 @@ html {
     color: #000000;
     padding-top: 10px;
     padding-bottom: 20px;
+
+}
+
+/* VISIT PAGE CSS */
+
+.visit-image {
+    justify-items: right;
+    align-items: right;
+    justify-content: right;
+    align-content: right;
+    justify-self: right;
+    align-self: right;
+    margin-left:40px;
+    height: auto;
+}
+
+.visit-details {
+    margin: 0% 5% 0% 0%;
+    padding: 10% 10% 10% 10%;
+}
+
+#landing-visit {
+    column-gap: 40px;
+    grid-template-columns: 50% 50%;
+    background-color: white;
+    background-image: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Product Page CSS */
+
+.panel {
+    display: grid;
+    grid-template-columns: 60% auto;
+    height: 600px;
+    width: auto;
+    background-color: hotpink;
+    vertical-align: middle;
+}
+
+.panel-image {
+    height: 600px;
+}
+
+.panel-text {
+    vertical-align: middle;
 
 }
