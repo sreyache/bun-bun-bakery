@@ -1,0 +1,146 @@
+
+/* MASTER COMPONENTS STYLING */
+
+* {
+    margin: 0px 0px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px 10px;
+}
+
+h1 {
+    font-family: 'Croissant One', cursive;
+    font-size: 48px;
+    color: black;
+}
+
+h2 {
+    font-family: 'Croissant One', cursive;
+    font-size: 32px;
+    color: black;
+}
+
+/* NAVIGATION BAR STYLING */
+
+header {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px 20px 20px;
+}
+
+.nav_bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;   
+    align-content: center;
+    margin: 0px;
+    width: 100%;
+}
+
+#nav_logo{
+    font-family: 'Croissant One', cursive;
+    font-size: 32px;
+    color: black;
+    justify-content: flex-start;
+}
+    
+.nav_item{
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    list-style-type: none;
+    color: black;
+    padding: 0px 20px;
+}
+    
+.nav_item a{
+    text-decoration: none;
+    color: black;
+}
+
+#active {
+    text-decoration: underline;
+    color: #8AD2FB;
+}
+
+/* BUTTON STYLING */
+
+.order-now-button {
+    font-family: Croissant One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding:15px 15px;
+    height: 50px;
+
+    color: #000000;
+    background-color: transparent;
+
+    border: 1px solid #000000;
+
+}
+
+.order-now-button:hover {
+    font-family: Croissant One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding:15px;
+    height: 50px;
+    vertical-align: middle;
+
+    background-color: #8AD2FB;
+    color: #FFFFFF;
+
+    border: 1px solid #8AD2FB;
+
+}
+
+/* HOME PAGE BODY STYLING */
+
+.landing-container {
+    display:grid;
+    grid-template-columns: 60% 40%;
+    height: calc(100vh - 75px);
+    align-content: center;
+    vertical-align: middle;
+    max-width: 100%;
+    background-image: url(Assets/home-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.landing-column-b {
+    background: rgba(255, 255, 255, 0.85);
+    margin: 0% 5% 0% 0%;
+    padding: 10% 10% 10% 10%;
+    text-align: left;
+}
+
+.body-text {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: left;
+    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+}
