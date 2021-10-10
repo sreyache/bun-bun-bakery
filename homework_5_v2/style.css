@@ -22,6 +22,75 @@ h2 {
     color: black;
 }
 
+p {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: left;
+    color: #000000;
+
+}
+
+select {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    padding: 0.5em 0.5em;
+    letter-spacing: 0.1em;
+    margin: 15px 0px;
+
+    background: #F4F4F4;
+    border: 1px solid #A3A3A5;
+    box-sizing: border-box;
+    
+}
+
+
+/* INTRO COMPONENT */
+.intro {
+    margin: 40px 0px;
+    text-align: center;
+    justify-content: center;
+}
+
+#intro-description {
+    color: grey;
+    font-weight: lighter;
+    text-align: center;
+}
+
+/* FOOTER STYLING */
+
+.footer-grid {
+    margin-top: 100px;
+    display:grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    background-color: white;
+}
+
+.footer-box {
+    font-family: 'Croissant One', cursive;
+    padding: 10px;
+    background-color: white;
+}
+#footer-b {
+    display:flex;
+    justify-content: center;
+    padding:10px;
+}
+
+#footer-c {
+    display:flex;
+    justify-content: right;
+    padding:10px;
+}
+#logo {
+    margin:10px;
+}
+
+
 /* NAVIGATION BAR STYLING */
 
 header {
@@ -142,5 +211,117 @@ nav {
     color: #000000;
     padding-top: 10px;
     padding-bottom: 20px;
-
 }
+
+/* SHOP/ORDERING PAGE STYLING */
+
+.order-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    margin: 0px 60px;
+}
+
+.order-box {
+    padding: 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+    justify-content: center;
+}
+
+.card {
+    padding: 20px;
+    margin: 0px 10px;
+    background-color:#F4F4F4;
+}
+
+.responsive {
+    max-width: 200px;
+    max-height: auto;
+    padding: 10px 0px;
+}
+
+#order-thumbnail {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+.order-body {
+    margin: 10px 10px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+.quantities {
+    display:grid;
+    grid-template-columns: 25% 25% 25% 25%;    
+    height: auto;
+    text-align: center;
+    justify-items: center;
+    justify-self: center;
+    margin: 20px 0px;
+}
+
+.cir {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #A3A3A5;
+    border-radius: 50%;
+    color: black;
+    padding-top: 15px;
+    box-sizing: border-box;
+    justify-self: center;
+}
+.cir:hover {
+    background-color: #8AD2FB;
+    border: none;
+    color: white;
+}
+
+.price {
+    font-family: 'Croissant One', cursive;
+    font-size: 20px; 
+    font-weight: bold;
+    text-align: right;
+}
+
+.add-to-cart {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 10px 0px;
+    margin: 15px 0px;
+
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+
+    line-height: 21px;
+    letter-spacing: 0.1em;
+
+    color: #F4F4F4;
+    background-color: #E5E5E5;
+
+    border: none;
+}
+
+.add-to-cart:hover {
+    background-color: #8AD2FB
+}
+
+.more-info {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #8AD2FB;
+    margin-top: 25px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.more-info a {
+    color: #8AD2FB;
+}
+
+/* VISIT PAGE STYLING */
+
