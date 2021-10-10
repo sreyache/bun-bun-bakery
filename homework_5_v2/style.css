@@ -250,7 +250,7 @@ nav {
 
 .responsive {
     max-width: 200px;
-    max-height: auto;
+    height: auto;
     padding: 10px 0px;
 }
 
@@ -343,8 +343,7 @@ nav {
     justify-content: right;
     align-content: center;
     justify-self: right;
-    align-self: right;
-
+    align-self: center;
     height: auto;
 }
 
