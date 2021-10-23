@@ -29,11 +29,10 @@
                 <li class="nav_item"><a id="active" href="shop2.html">SHOP</a></li>
                 <li class="nav_item"><a href="visit2.html">VISIT</a></li>
                 <li class="nav_item"><a href="temp2.html">PRODUCT</a></li>
-                <li class="nav_item"><img src="Assets/cart-vector.svg" alt="cart-logo" class="logo"/></li>
+                <li class="nav_item" id="cart-logo"><img src="Assets/cart-vector.svg" alt="cart-logo" class="logo" onclick="openNav()"/></li>
                 <li class="nav_item"><button class="order-now-button">ORDER NOW</button></li>
             </ul>
         </nav>
-        <div id="cd-cart-trigger"><a class="cd-img-replace" href="#0">Cart</a></div>
     </header>
     <div class="intro">
         <h1>shop</h1>
@@ -69,7 +68,7 @@
                     <div class="price">
                         $5.00
                     </div>
-                    <div><button class="add-to-cart">ADD TO CART</button></div>
+                    <div><button class="add-to-cart" onclick="addProductToCart()">ADD TO CART</button></div>
                     <div class="more-info"><a href="temp2.html">More Info</a></div>
                 </div>
             </div>
@@ -256,27 +255,19 @@
             </div>
         </div>
     </footer>
-    <div id="cd-shadow-layer"></div>
-
-    <div id="cd-cart">
-       <h2>Cart</h2>
-       <ul class="cd-cart-items">
-          <li>
-             <!-- ... -->
-          </li>
-    
-          <li>
-             <!-- ... -->
-          </li>
-       </ul> <!-- cd-cart-items -->
-    
-       <div class="cd-cart-total">
-          <p>Total <span>$39.96</span></p>
-       </div> <!-- cd-cart-total -->
-    
-       <a href="#0" class="checkout-btn">Checkout</a>
-    
-       <p class="cd-go-to-cart"><a href="#0">Go to cart page</a></p>
-    </div>
+    <div id="mySidepanel" class="sidepanel">
+        <div id="cart-header">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <h1>Your Cart</h1>
+        </div>
+        <div id="cart-products"></div>
+        <div id="cart-footer">
+            <button class="add-to-cart" id="check-out-button">CHECKOUT</button>
+        </div>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
 </body>
 </html>
