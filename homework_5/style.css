@@ -458,7 +458,7 @@ nav {
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
-    left: 0;
+    right: 0;
     background-color: #F5F5F5; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
@@ -503,10 +503,6 @@ nav {
     background-color: #444;
   }
 
-  #mySidePanel {
-      position: right;
-
-  }
 
   #cart-header {
       align-content: center;
@@ -515,10 +511,17 @@ nav {
       align-self: center;
       text-align: center;
       justify-content: center;
-      padding: 30px 0px;
-      background-color: #8AD2FB;
+  }
+
+  #cart-footer {
+      margin: 30px;
+  }
+
+  #cart-products {
+      margin: 15px;
   }
 
   #check-out-button {
       width: 300px;
+      align-self: center;
   }
