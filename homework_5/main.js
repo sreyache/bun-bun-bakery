@@ -30,71 +30,31 @@ function glazeSelection() {
     return glaze_answer;
 }
 
-function flavorSelection() {
-  if (document.getElementById(this) == "original-cart-button") {
-    return "10";
-  }
-}
-
-function addItemToCart() {
+function addItemToCart(flavor) {
   //add object to the cart panel
   var glaze = glazeSelection()
-  var flavor = flavorSelection()
+  var flavor = flavor;
   var newOrderItem = new CartItem(flavor, glaze);
   orderList.push(newOrderItem);
-  //update cart total
+  
   console.log(orderList)
+  
+  var element = document.createElement('div');
+  element.id = "order-" + orderList.length 
+
+  document.getElementById("cart-products").appendChild(element);
+
+  var order_flavor = document.createElement('h2');
+  order_flavor.textContent = "Flavor: " + flavor;
+
+  document.getElementById("order-1").appendChild(order_flavor);
+
+  var order_glaze = document.createElement('p');
+  order_glaze.textContent = "Glaze: " + glaze;
+
+  document.getElementById("order-1").appendChild(order_glaze);
+
   //open cart panel
   openNav()
 }
 
-
-
-// function cartOnLoad
-
-
-// function orderItem (flavor, glaze, quantity){
-//   // this.flavor = flavor;
-//   this.glaze = glazeSelection();
-//   // this.quantity = quantity;
-// }
-
-
-// function flavorSelection() {
-//   var flavor_selection = 
-// }
-
-// function glazeSelection() {
-//   var glaze_selection = document.getElementById("original-glaze");
-//   var glaze_answer = glaze_selection.value;
-//   return glaze_answer;
-// }
-
-// function changeQuantityState() {
-// }
-
-// add item to cart 
-// function addProductToCart() {
-//     //open cart panel
-//     openNav()
-
-//     //add object to the cart panel
-
-//     //update cart total=
-// }
-
-// NEW CART ORDER OPTIONS 
-
-// var added_to_cart_products_list = "Your cart currently has no items";
-
-// function orderItem (thumbnail, flavor, glaze, quantity)
-// {
-//   this.thumbail = 
-//   this.flavor = flavor;
-//   this.glaze = glaze;
-//   if (quantity ==
-//   this.quantity = quantity;
-// }
-
-// function cartOnLoad() {
-  // console.log(added_to_cart_products_list);
