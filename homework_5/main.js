@@ -4,6 +4,13 @@
 function openNav() {
   document.getElementById("mySidepanel").style.width = "500px";
   console.log("cart-open");
+  if (orderList.length == 0){
+    var element = document.createElement('p');
+    element.textContent = "Your cart is currently empty."
+    element.className += "placeholder-text"
+    
+    document.getElementById("cart-products").appendChild(element);
+  }
 }
 
 /* Set the width of the sidebar to 0 (hide it) */
@@ -15,6 +22,7 @@ function closeNav() {
 // CREATING ITEMS TO ADD TO THE CART
 
 var orderList = [];
+// var cartEmpty = True;
 
 function CartItem(flavor, glaze) {
   this.flavor = flavor;
@@ -24,37 +32,41 @@ function CartItem(flavor, glaze) {
 }
 
 
-function glazeSelection() {
-    var glaze_selection = document.getElementById("original-glaze");
-    var glaze_answer = glaze_selection.value;
-    return glaze_answer;
+function glazeSelection(glazeId) {
+  var temp = document.getElementsByClassName("select-glaze")  
+  var glaze_selection = temp[glazeId];
+  var glaze_answer = glaze_selection.value;
+  return glaze_answer;
 }
 
-function addItemToCart(flavor) {
+function addItemToCart(flavor, glazeId) {
   //add object to the cart panel
-  var glaze = glazeSelection()
+  var glaze = glazeSelection(glazeId)
   var flavor = flavor;
   var newOrderItem = new CartItem(flavor, glaze);
   orderList.push(newOrderItem);
+  addProductCardToCart(glaze, flavor);
   
   console.log(orderList)
   
+  openNav()
+}
+
+function addProductCardToCart(glaze, flavor) {
   var element = document.createElement('div');
   element.id = "order-" + orderList.length 
+  element.className += "add-product-to-cart"
 
   document.getElementById("cart-products").appendChild(element);
 
-  var order_flavor = document.createElement('h2');
+  var order_flavor = document.createElement('h3');
   order_flavor.textContent = "Flavor: " + flavor;
 
-  document.getElementById("order-1").appendChild(order_flavor);
+  document.getElementById(element.id).appendChild(order_flavor);
 
   var order_glaze = document.createElement('p');
   order_glaze.textContent = "Glaze: " + glaze;
 
-  document.getElementById("order-1").appendChild(order_glaze);
-
-  //open cart panel
-  openNav()
+  document.getElementById(element.id).appendChild(order_glaze);
 }
 
