@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop | Bun Bun Bakery</title>
-    <script src="jquery-3.5.1.min.js"></script>
 
     <!-- Linking StyleSheet -->
     <link rel="stylesheet" href="style.css">
@@ -38,6 +37,8 @@
         <h1>shop</h1>
         <p id="intro-description">Explore our flavors and add your favorites to the cart</p>
     </div>
+    
+    
     <div class='order-grid'>
         <div class="order-box">
             <div class="card">
@@ -48,7 +49,7 @@
                     <img src="Assets/shop-thumbnail.png" alt="Original" class="responsive">
                 </div>
                 <!-- Order Body Details -->
-                <div class ="order-body">
+                <div class ="order-body" id="order-original">
                     <label><span class="asterick">*</span>Glaze</label>
                     <br>
                     <select name="glaze" id="original-glaze" onchange="glazeSelection()">
@@ -60,7 +61,7 @@
                     <label><span class="asterick">*</span>Quantity</label>
                     <br>
                     <div class="quantities">
-                        <div class="cir" onclick="addToCart()">1</div>
+                        <div class="cir">1</div>
                         <div class="cir">3</div>
                         <div class="cir">6</div>
                         <div class="cir">12</div>
@@ -68,11 +69,14 @@
                     <div class="price">
                         $5.00
                     </div>
-                    <div><button class="add-to-cart" onclick="addProductToCart()">ADD TO CART</button></div>
+                    <div><button class="add-to-cart" onclick="addItemToCart()" id="original">ADD TO CART</button></div>
                     <div class="more-info"><a href="temp2.html">More Info</a></div>
                 </div>
             </div>
         </div>
+       
+       
+       
         <div class="order-box">
             <div class="card">
                 <!-- Flavor Title -->
@@ -242,6 +246,7 @@
                     <div class="more-info"><a href="temp2.html">More Info</a></div>
                 </div>
             </div>
+            <button class="add-to-cart">Create new</button>
         </div>
     </div>
     <footer>
@@ -261,7 +266,7 @@
             <h1>Your Cart</h1>
             <hr>
         </div>
-        <div id="cart-products">
+        <div id="cart-products" onload="cartOnLoad()">
             <h3>Order 1</h3>
             <h3>Order 2</h3>
             <h3>Order 3</h3>
