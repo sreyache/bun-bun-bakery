@@ -24,7 +24,8 @@
                     <li class="nav_item"><a href="shop2.html">SHOP</a></li>
                     <li class="nav_item"><a id="active" href="visit2.html">VISIT</a></li>
                     <li class="nav_item"><a href="temp2.html">PRODUCT</a></li>
-                    <li class="nav_item"><img src="Assets/cart-vector.svg" alt="cart-logo" id="logo"/></li>
+                    <li class="nav_item" id="wishlist-logo"><a href="wishlist.html"><img src="Assets/wishlist-icon.png" alt="wishlist-logo" class="logo"/></a></li>
+                    <li class="nav_item" id="cart-logo"><img src="Assets/cart-vector.svg" alt="cart-logo" class="logo" onclick="openNav()"/></li>
                     <li class="nav_item"><button class="order-now-button">ORDER NOW</button></li>
                 </ul>
             </nav>
@@ -42,5 +43,41 @@
         
             </div>
         </div>
+        <div id="mySidepanel" class="sidepanel">
+        <div id="cart-header">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <h1>Your Cart</h1>
+            <hr>
+        </div>
+        <div id="cart-products">
+        </div>
+        <div id="cart-footer">
+            <button class="add-to-cart" id="check-out-button">CHECKOUT</button>
+        </div>
+      </div>
+      <div id="mySidepanel" class="sidepanel">
+        <div id="cart-header">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <h1>Your Cart</h1>
+            <hr>
+        </div>
+        <div id="cart-products">
+        </div>
+        <div id="cart-footer">
+            <button class="add-to-cart" id="check-out-button">CHECKOUT</button>
+        </div>
+      </div>
+      <div id="mySidepanel" class="sidepanel">
+        <div id="cart-header">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <h1>Your Cart</h1>
+            <hr>
+        </div>
+        <div id="cart-products">
+        </div>
+        <div id="cart-footer">
+            <button class="add-to-cart" id="check-out-button">CHECKOUT</button>
+        </div>
+      </div>
     </body>
 </html>
