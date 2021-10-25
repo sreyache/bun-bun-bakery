@@ -33,7 +33,7 @@ function CartItem(flavor, glaze) {
 
 
 function glazeSelection(glazeId) {
-  var temp = document.getElementsByClassName("select-glaze")  
+  var temp = document.getElementsByClassName("select-glaze");
   var glaze_selection = temp[glazeId];
   var glaze_answer = glaze_selection.value;
   return glaze_answer;
@@ -41,21 +41,21 @@ function glazeSelection(glazeId) {
 
 function addItemToCart(flavor, glazeId) {
   //add object to the cart panel
-  var glaze = glazeSelection(glazeId)
+  var glaze = glazeSelection(glazeId);
   var flavor = flavor;
   var newOrderItem = new CartItem(flavor, glaze);
   orderList.push(newOrderItem);
   addProductCardToCart(glaze, flavor);
   
-  console.log(orderList)
+  console.log(orderList);
   
-  openNav()
+  openNav();
 }
 
 function addProductCardToCart(glaze, flavor) {
   var element = document.createElement('div');
-  element.id = "order-" + orderList.length 
-  element.className += "add-product-to-cart"
+  element.id = "order-" + orderList.length; 
+  element.className += "add-product-to-cart";
 
   document.getElementById("cart-products").appendChild(element);
 
@@ -68,5 +68,36 @@ function addProductCardToCart(glaze, flavor) {
   order_glaze.textContent = "Glaze: " + glaze;
 
   document.getElementById(element.id).appendChild(order_glaze);
+
+  let newButton = document.createElement('button');
+  newButton.id = "remove-button-" + orderList.length;
+  newButton.innerText = 'remove';
+  document.getElementById(element.id).appendChild(newButton);
+  document.getElementById(newButton.id).onclick = removeProductFromCart;
+  
 }
 
+function removeProductFromCart() {
+  console.log("remove-item");
+  console.log(this.id);
+  order_div = this.parentNode;
+  order_div.remove()
+  //remove the cartItem from the master cart list
+}
+
+function changeFlavorInformation(flavor) {
+  var description = document.getElementById("panel-flavor-description")
+  if (flavor == 'original') { 
+    description.innerHTML = "Our original roles give you the classic taste of cozy , comfort. We specialize in these rolls. ";
+  } else if (flavor == 'gf'){
+    description.innerHTML = "Our gluten free rolls might be just right for you!";
+  } else if (flavor == 'blackberry'){
+    description.innerHTML = "Blackberries fresh from our very own garden. This roll is refreshing and berry good!";
+  } else if (flavor == 'caramel'){
+    description.innerHTML = "Creamy goodness will takeover you when you try our caramel roll. The sweetest roll on our menu.";
+  } else if (flavor == 'walnut'){
+    description.innerHTML = "Are you a nutty fan? Well this takes our delicious cinnamon goodness and combines it with some fresh walnuts imported from somewhere important.";
+  } else if (flavor == 'pk'){
+    description.innerHTML = "Bringing you a taste of the fall through our favorite pumpkin spice roll. Taste the goodness today!";
+  }
+}

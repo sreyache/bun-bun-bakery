@@ -538,3 +538,43 @@ nav {
 .wishlist-items {
     margin: 0px 60px;
 }
+
+.order-box .wishlist-selector {
+    justify-content: right;
+    text-align: right;
+    align-items: right;
+}
+
+
+/* JAVASCRIPT FOR PRODUCTS PAGE */
+
+.flavor-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-flavor-selection {
+    background-color: #F4F4F4;
+    color: black;
+    margin: 10px;
+    padding: 5px 7px;
+
+    font-family: 'Roboto', sans-serif;;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 25px;
+
+    border: white;
+
+
+}
+
+.product-flavor-selection:hover {
+    background-color: #8AD2FB;
+    color: white;
+}
+
+#panel-flavor-description { 
+    font-weight: lighter;
+}
