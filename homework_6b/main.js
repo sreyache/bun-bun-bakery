@@ -1,7 +1,5 @@
-// NEW CART TRIGGER OPTIONS 
 
-
-// MASTER VARIABLE
+/* INITAL CHECK TO LOCAL STORAGE */
 let orderList = [];
 let savedCart = JSON.parse(localStorage.getItem('orderList'));
 if(savedCart != null){
@@ -12,30 +10,35 @@ else{
 }
 console.log(orderList);
 
-/* Set the width of the sidebar to 500px (show it) */
+
+/* PLACEHOLDER TEXT FOR CART */
+var cartEmptyText = document.createElement('p');
+cartEmptyText.textContent = "Your cart is currently empty."
+cartEmptyText.className += "placeholder-text";
+
+
+/* OPEN AND FILL CART WITH ITEMS */
 function openNav() {
   document.getElementById("mySidepanel").style.width = "500px";
   console.log("cart-open");
-  if (orderList.length == 0){
-    var element = document.createElement('p');
-    element.textContent = "Your cart is currently empty."
-    element.className += "placeholder-text"
-    
+
+  if(orderList.length == 0) {
+    //insert placeholder text into the cart
     document.getElementById("cart-products").appendChild(element);
+  }
+  else {
+    //add orderList items as divs to the dom in the cart.
+    //fillCartItems();
   }
 }
 
-/* Set the width of the sidebar to 0 (hide it) */
+/* CLOSE CART */
 function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
   console.log("cart-close");
 }
 
-// CREATING ITEMS TO ADD TO THE CART
-
-
-// var cartEmpty = True;
-
+/* CART ITEM CREATOR */
 function CartItem(flavor, glaze) {
   this.flavor = flavor;
   this.glaze = glaze;
@@ -43,7 +46,7 @@ function CartItem(flavor, glaze) {
   this.image_alt = "Cinnamon Roll Thumbnail";
 }
 
-
+/* GLAZE SELECTOR */
 function glazeSelection(glazeId) {
   var temp = document.getElementsByClassName("select-glaze");
   var glaze_selection = temp[glazeId];
@@ -51,21 +54,23 @@ function glazeSelection(glazeId) {
   return glaze_answer;
 }
 
+/* ADDING ITEM TO THE ORDER LIST */
 function addItemToCart(flavor, glazeId) {
-  //add object to the cart panel
   var glaze = glazeSelection(glazeId);
   var flavor = flavor;
   var newOrderItem = new CartItem(flavor, glaze);
+  
   orderList.push(newOrderItem);
+  localStorage.setItem("orderList", JSON.stringify(orderList));
+
   addProductCardToCart(glaze, flavor);
   
   console.log(orderList);
   
   openNav();
-
-  localStorage.setItem("orderList", JSON.stringify(orderList));
 }
 
+/* ADD THE PRODUCT TO THE CART DIV */
 function addProductCardToCart(glaze, flavor) {
   var element = document.createElement('div');
   element.id = "order-" + orderList.length; 
@@ -90,6 +95,7 @@ function addProductCardToCart(glaze, flavor) {
   document.getElementById(newButton.id).onclick = removeProductFromCart;
 }
 
+/* CLICKING ON THE REMOVE BUTTON TO REMOVE FROM DIV */
 function removeProductFromCart() {
   console.log("remove-item");
   console.log(this.id);
@@ -104,6 +110,8 @@ function removeProductFromCart() {
   localStorage.setItem(orderList, JSON.stringify(orderList));
 }
 
+
+/* PRODUCT PAGE -- CHANGE FLAVOR INFORMATION BASED ON SELECTION */
 function changeFlavorInformation(flavor) {
   var description = document.getElementById("panel-flavor-description")
   if (flavor == 'original') { 
