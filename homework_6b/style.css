@@ -1,0 +1,580 @@
+
+/* MASTER COMPONENTS STYLING */
+
+* {
+    margin: 0px 0px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px 10px;
+}
+
+h1 {
+    font-family: 'Croissant One', cursive;
+    font-size: 48px;
+    color: black;
+}
+
+h2 {
+    font-family: 'Croissant One', cursive;
+    font-size: 32px;
+    color: black;
+}
+
+h3 {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: BOLD;
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+p {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: left;
+    color: #000000;
+
+}
+
+hr {
+    margin: 15px 0px;
+}
+
+select {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    padding: 0.5em 0.5em;
+    letter-spacing: 0.1em;
+    margin: 15px 0px;
+
+    background: #F4F4F4;
+    border: 1px solid #A3A3A5;
+    box-sizing: border-box; 
+}
+
+
+/* INTRO COMPONENT */
+.intro {
+    margin: 40px 0px;
+    text-align: center;
+    justify-content: center;
+}
+
+#intro-description {
+    color: grey;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* FOOTER STYLING */
+
+.footer-grid {
+    margin-top: 100px;
+    display:grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    background-color: white;
+}
+
+.footer-box {
+    font-family: 'Croissant One', cursive;
+    padding: 10px;
+    background-color: white;
+}
+#footer-b {
+    display:flex;
+    justify-content: center;
+    padding:10px;
+}
+
+#footer-c {
+    display:flex;
+    justify-content: right;
+    padding:10px;
+}
+.logo {
+    margin:10px;
+    max-width: 30px;
+}
+
+
+/* NAVIGATION BAR STYLING */
+
+header {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px 20px 20px;
+}
+
+.nav_bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;   
+    align-content: center;
+    margin: 0px;
+    width: 100%;
+}
+
+#nav_logo{
+    font-family: 'Croissant One', cursive;
+    font-size: 32px;
+    color: black;
+    justify-content: flex-start;
+}
+    
+.nav_item{
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    list-style-type: none;
+    color: black;
+    padding: 0px 20px;
+}
+    
+.nav_item a{
+    text-decoration: none;
+    color: black;
+}
+
+#active {
+    text-decoration: underline;
+    color: #8AD2FB;
+}
+
+/* BUTTON STYLING */
+
+.order-now-button {
+    font-family: Croissant One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding:15px 15px;
+    height: 50px;
+
+    color: #000000;
+    background-color: transparent;
+
+    border: 1px solid #000000;
+
+}
+
+.order-now-button:hover {
+    font-family: Croissant One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding:15px;
+    height: 50px;
+    vertical-align: middle;
+
+    background-color: #8AD2FB;
+    color: #FFFFFF;
+
+    border: 1px solid #8AD2FB;
+
+}
+
+/* HOME PAGE BODY STYLING */
+
+.landing-container {
+    display:grid;
+    grid-template-columns: 60% 40%;
+    height: calc(100vh - 75px);
+    align-content: center;
+    vertical-align: middle;
+    max-width: 100%;
+    background-image: url(Assets/home-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.landing-column-b {
+    background: rgba(255, 255, 255, 0.85);
+    margin: 0% 5% 0% 0%;
+    padding: 10% 10% 10% 10%;
+    text-align: left;
+}
+
+.body-text {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: left;
+    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+/* SHOP/ORDERING PAGE STYLING */
+
+.order-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    margin: 0px 100px;
+}
+
+.order-box {
+    padding: 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+    justify-content: center;
+}
+
+.card {
+    padding: 20px;
+    margin: 0px 10px;
+    background-color:#F4F4F4;
+}
+
+.responsive {
+    max-width: 200px;
+    height: auto;
+    padding: 10px 0px;
+}
+
+.order-thumbnail {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+.order-body {
+    margin: 10px 10px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+.quantities {
+    display:grid;
+    grid-template-columns: 25% 25% 25% 25%;    
+    height: auto;
+    text-align: center;
+    justify-items: center;
+    justify-self: center;
+    margin: 20px 0px;
+}
+
+.cir {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #A3A3A5;
+    border-radius: 50%;
+    color: black;
+    padding-top: 15px;
+    box-sizing: border-box;
+    justify-self: center;
+}
+.cir:hover {
+    background-color: #8AD2FB;
+    border: none;
+    color: white;
+}
+
+.price {
+    font-family: 'Croissant One', cursive;
+    font-size: 20px; 
+    font-weight: bold;
+    text-align: right;
+}
+
+.add-to-cart {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 10px 0px;
+    margin: 15px 0px;
+
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+
+    line-height: 21px;
+    letter-spacing: 0.1em;
+
+    color: #F4F4F4;
+    background-color: #E5E5E5;
+
+    border: none;
+}
+
+.add-to-cart:hover {
+    background-color: #8AD2FB
+}
+
+.more-info {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #8AD2FB;
+    margin-top: 25px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.more-info a {
+    color: #8AD2FB;
+}
+
+.asterick {
+    color: red;
+}
+
+/* VISIT PAGE STYLING */
+
+.visit-image {
+    justify-items: right;
+    justify-content: right;
+    align-content: center;
+    justify-self: right;
+    align-self: center;
+    height: auto;
+}
+
+.visit-details {
+    margin: 0% 5% 0% 0%;
+    padding: 10% 10% 10% 10%;
+}
+
+.landing-visit {
+    display:grid;
+    grid-template-columns: 50% 50%;
+    height: calc(100vh - 75px);
+
+    column-gap: 40px;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    margin: 0px 40px;
+}
+
+.responsive-location {
+    max-height: 500px;
+    width: auto;
+}
+
+.visit-address {
+    color: grey;
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+/* PRODUCT STYLING PAGE */
+
+.panel {
+    display: grid;
+    align-content: center;
+}
+
+.panel-text {
+    align-content: center;
+    align-self: center;
+    justify-content: left;
+    margin: 50px 30px;
+}
+
+.panel-thumbnail {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#first-panel {
+    background-color: #B3E2FC;
+    grid-template-columns: 60% 40%;
+}
+
+#second-panel {
+    background-color: #F4F4F4;
+    grid-template-columns: 40% 60%;
+}
+
+#panel-description {
+    font-weight: lighter;
+}
+
+.product-details {
+    display:grid;
+    grid-template-columns: 40% 60%;
+
+    column-gap: 40px;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    margin: 40px 40px;
+}
+
+.product-image {
+    justify-content: right;
+    justify-self: right;
+}
+
+.product-thumbnail {
+    max-height: 350px;
+    justify-content: right;
+    justify-self: right;
+    border: 5px solid #8AD2FB;
+}
+
+#product-quantities {
+    width: 500px;
+}
+
+.selected-flavor {
+    font-weight: normal;
+    text-decoration: underline;
+    color: #8AD2FB;
+}
+
+.product-description {
+    padding: 20px;
+}
+
+/* CART STYLING  */
+
+/* The sidepanel menu */
+.sidepanel {
+    height: 100%; /* Specify a height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #F5F5F5; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+    padding-bottom: 100px;
+}
+  
+  /* The sidepanel links */
+  .sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style the button that is used to open the sidepanel */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+
+
+  #cart-header {
+      align-content: center;
+      height: auto;      
+      color: black;
+      align-self: center;
+      text-align: center;
+      justify-content: center;
+  }
+
+  #cart-footer {
+      margin: 30px;
+  }
+
+  #cart-products {
+      margin: 15px;
+  }
+
+  #check-out-button {
+      width: 300px;
+      align-self: center;
+  }
+
+  .placeholder-text {
+      text-align: center;
+      margin: 20px;
+  }
+
+  /* WISHLIST STYLING */
+
+.wishlist-items {
+    margin: 0px 60px;
+}
+
+.order-box .wishlist-selector {
+    justify-content: right;
+    text-align: right;
+    align-items: right;
+}
+
+
+/* JAVASCRIPT FOR PRODUCTS PAGE */
+
+.flavor-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-flavor-selection {
+    background-color: #F4F4F4;
+    color: black;
+    margin: 10px;
+    padding: 5px 7px;
+
+    font-family: 'Roboto', sans-serif;;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 25px;
+
+    border: white;
+
+
+}
+
+.product-flavor-selection:hover {
+    background-color: #8AD2FB;
+    color: white;
+}
+
+#panel-flavor-description { 
+    font-weight: lighter;
+}
