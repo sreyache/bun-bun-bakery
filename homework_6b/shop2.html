@@ -63,23 +63,23 @@
                     <label><span class="asterick">*</span>Quantity</label>
                     <br>
                     <div class="quantities-container">
-                        <form class="form cf">
+                        <form class="form cf" id ="temp-quantity-checker">
                           <section class="plan cf">
-                            <input type="radio" name="radio1" id="Q1" value="free">
-                            <label class="label four col" for="Q1">1</label>
-                            <input type="radio" name="radio1" id="Q2" value="basic" checked>
-                            <label class="basic-label four col" for="Q2">3</label>
-                            <input type="radio" name="radio1" id="Q3" value="premium">
-                            <label class="premium-label four col" for="Q3">6</label>
-                            <input type="radio" name="radio1" id="Q4" value="premium">
-                            <label class="soemthing four col" for="Q4">12</label>
+                            <input type="radio" name="radio1" id="radio1-Q1" value="1" checked>
+                            <label class="label four col" for="radio1-Q1">1</label>
+                            <input type="radio" name="radio1" id="radio1-Q2" value="3" >
+                            <label class="basic-label four col" for="radio1-Q2">3</label>
+                            <input type="radio" name="radio1" id="radio1-Q3" value="6">
+                            <label class="premium-label four col" for="radio1-Q3">6</label>
+                            <input type="radio" name="radio1" id="radio1-Q4" value="12">
+                            <label class="soemthing four col" for="radio1-Q4">12</label>
                           </section>
                         </form>
                     </div>
                     <div class="price">
                         $5.00
                     </div>
-                    <div><button class="add-to-cart" onclick="addItemToCart('Original', 0)">ADD TO CART</button></div>
+                    <div><button class="add-to-cart" id="add-to-cart-0" onclick="addToCart(0)">ADD TO CART</button></div>
                     <div class="more-info"><a href="temp2.html">More Info</a></div>
                 </div>
             </div>
@@ -107,16 +107,24 @@
                     </select>
                     <label><span class="asterick">*</span>Quantity</label>
                     <br>
-                    <div class="quantities">
-                        <div class="cir">1</div>
-                        <div class="cir">3</div>
-                        <div class="cir">6</div>
-                        <div class="cir">12</div>
+                    <div class="quantities-container">
+                        <form class="form cf">
+                          <section class="plan cf">
+                            <input type="radio" name="radio2" id="radio2-Q1" value="1" checked>
+                            <label class="label four col" for="radio2-Q1">1</label>
+                            <input type="radio" name="radio2" id="radio2-Q2" value="3">
+                            <label class="basic-label four col" for="radio2-Q2">3</label>
+                            <input type="radio" name="radio2" id="radio2-Q3" value="6">
+                            <label class="premium-label four col" for="radio2-Q3">6</label>
+                            <input type="radio" name="radio2" id="radio2-Q4" value="12">
+                            <label class="soemthing four col" for="radio2-Q4">12</label>
+                          </section>
+                        </form>
                     </div>
                     <div class="price">
                         $5.00
                     </div>
-                    <div><button class="add-to-cart" onclick="addItemToCart('Blackberry', 1)">ADD TO CART</button></div>
+                    <div><button class="add-to-cart" id="add-to-cart-1" onclick="addToCart(1)">ADD TO CART</button></div>
                     <div class="more-info"><a href="temp2.html">More Info</a></div>
                 </div>
             </div>
@@ -141,16 +149,24 @@
                     </select>
                     <label><span class="asterick">*</span>Quantity</label>
                     <br>
-                    <div class="quantities">
-                        <div class="cir">1</div>
-                        <div class="cir">3</div>
-                        <div class="cir">6</div>
-                        <div class="cir">12</div>
+                    <div class="quantities-container">
+                        <form class="form cf">
+                          <section class="plan cf">
+                            <input type="radio" name="radio3" id="radio3-Q1" value="1" checked>
+                            <label class="label four col" for="radio3-Q1">1</label>
+                            <input type="radio" name="radio3" id="radio3-Q2" value="3">
+                            <label class="basic-label four col" for="radio3-Q2">3</label>
+                            <input type="radio" name="radio3" id="radio3-Q3" value="6">
+                            <label class="premium-label four col" for="radio3-Q3">6</label>
+                            <input type="radio" name="radio3" id="radio3-Q4" value="12">
+                            <label class="soemthing four col" for="radio3-Q4">12</label>
+                          </section>
+                        </form>
                     </div>
                     <div class="price">
                         $5.00
                     </div>
-                    <div><button class="add-to-cart" onclick="addItemToCart('Caramel', 2)">ADD TO CART</button></div>
+                    <div><button class="add-to-cart" id="add-to-cart-2" onclick="addToCart(2)">ADD TO CART</button></div>
                     <div class="more-info"><a href="temp2.html">More Info</a></div>
                 </div>
             </div>
@@ -175,16 +191,24 @@
                     </select>
                     <label><span class="asterick">*</span>Quantity</label>
                     <br>
-                    <div class="quantities">
-                        <div class="cir">1</div>
-                        <div class="cir">3</div>
-                        <div class="cir">6</div>
-                        <div class="cir">12</div>
+                    <div class="quantities-container">
+                        <form class="form cf">
+                          <section class="plan cf">
+                            <input type="radio" name="radio4" id="radio4-Q1" value="1" checked>
+                            <label class="label four col" for="radio4-Q1">1</label>
+                            <input type="radio" name="radio4" id="radio4-Q2" value="3">
+                            <label class="basic-label four col" for="radio4-Q2">3</label>
+                            <input type="radio" name="radio4" id="radio4-Q3" value="6">
+                            <label class="premium-label four col" for="radio4-Q3">6</label>
+                            <input type="radio" name="radio4" id="radio4-Q4" value="12">
+                            <label class="soemthing four col" for="radio4-Q4">12</label>
+                          </section>
+                        </form>
                     </div>
                     <div class="price">
                         $5.00
                     </div>
-                    <div><button class="add-to-cart" onclick="addItemToCart('Walnut', 3)">ADD TO CART</button></div>
+                    <div><button class="add-to-cart" id="add-to-cart-3" onclick="addToCart(3)">ADD TO CART</button></div>
                     <div class="more-info"><a href="temp2.html">More Info</a></div>
                 </div>
             </div>
@@ -209,16 +233,24 @@
                     </select>
                     <label><span class="asterick">*</span>Quantity</label>
                     <br>
-                    <div class="quantities">
-                        <div class="cir">1</div>
-                        <div class="cir">3</div>
-                        <div class="cir">6</div>
-                        <div class="cir">12</div>
+                    <div class="quantities-container">
+                        <form class="form cf">
+                          <section class="plan cf">
+                            <input type="radio" name="radio5" id="radio5-Q1" value="1" checked>
+                            <label class="label four col" for="radio5-Q1">1</label>
+                            <input type="radio" name="radio5" id="radio5-Q2" value="3">
+                            <label class="basic-label four col" for="radio5-Q2">3</label>
+                            <input type="radio" name="radio5" id="radio5-Q3" value="6">
+                            <label class="premium-label four col" for="radio5-Q3">6</label>
+                            <input type="radio" name="radio5" id="radio5-Q4" value="12">
+                            <label class="soemthing four col" for="radio5-Q4">12</label>
+                          </section>
+                        </form>
                     </div>
                     <div class="price">
                         $5.00
                     </div>
-                    <div><button class="add-to-cart" onclick="addItemToCart('Original - Gluten Free', 4)">ADD TO CART</button></div>
+                    <div><button class="add-to-cart" id="add-to-cart-4" onclick="addToCart(4)">ADD TO CART</button></div>
                     <div class="more-info"><a href="temp2.html">More Info</a></div>
                 </div>
             </div>
@@ -243,16 +275,24 @@
                     </select>
                     <label><span class="asterick">*</span>Quantity</label>
                     <br>
-                    <div class="quantities">
-                        <div class="cir">1</div>
-                        <div class="cir">3</div>
-                        <div class="cir">6</div>
-                        <div class="cir">12</div>
+                    <div class="quantities-container">
+                        <form class="form cf">
+                          <section class="plan cf">
+                            <input type="radio" name="radio6" id="radio6-Q1" value="1" checked>
+                            <label class="label four col" for="radio6-Q1">1</label>
+                            <input type="radio" name="radio6" id="radio6-Q2" value="3">
+                            <label class="basic-label four col" for="radio6-Q2">3</label>
+                            <input type="radio" name="radio6" id="radio6-Q3" value="6">
+                            <label class="premium-label four col" for="radio6-Q3">6</label>
+                            <input type="radio" name="radio6" id="radio6-Q4" value="12">
+                            <label class="soemthing four col" for="radio6-Q4">12</label>
+                          </section>
+                        </form>
                     </div>
                     <div class="price">
                         $5.00
                     </div>
-                    <div><button class="add-to-cart" onclick="addItemToCart('Pumpkin Spice', 5)">ADD TO CART</button></div>
+                    <div><button class="add-to-cart" id="add-to-cart-5" onclick="addToCart(5)">ADD TO CART</button></div>
                     <div class="more-info"><a href="temp2.html">More Info</a></div>
                 </div>
             </div>
@@ -260,12 +300,6 @@
         </div>
     </div>
     <div>
-        <form>
-            <input type="radio" name="radAnswer"/> 1
-            <input type="radio" name="radAnswer"/> 3
-            <input type="radio" name="radAnswer"/> 6
-            <input type="radio" name="radAnswer"/> 12
-        </form>
     </div>
     <footer>
         <div class=footer-grid>

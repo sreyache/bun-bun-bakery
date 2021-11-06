@@ -39,26 +39,82 @@ function closeNav() {
 }
 
 /* CART ITEM CREATOR */
-function CartItem(flavor, glaze) {
+function CartItem(flavor, glaze, quantity) {
   this.flavor = flavor;
   this.glaze = glaze;
+  this.quantity = quantity;
   this.image = "Assets/shop-thumbnail.png";
   this.image_alt = "Cinnamon Roll Thumbnail";
 }
 
-/* GLAZE SELECTOR */
-function glazeSelection(glazeId) {
+/* QUANTITY VALUE FINDER */
+function quantitySelection(buttonId) { 
+  if (buttonId == 0) {return document.querySelector('input[name="radio1"]:checked').value;}
+  else if (buttonId == 1) {return document.querySelector('input[name="radio2"]:checked').value;}
+  else if (buttonId == 2) {return document.querySelector('input[name="radio3"]:checked').value;}
+  else if (buttonId == 3) {return document.querySelector('input[name="radio4"]:checked').value;}
+  else if (buttonId == 4) {return document.querySelector('input[name="radio5"]:checked').value;}
+  else if (buttonId == 5) {return document.querySelector('input[name="radio6"]:checked').value;}
+}
+
+/* FLAVOR VALUE FINDER */
+function flavorSelection(buttonId) {
+  if (buttonId == 0) {return "Original";}
+  else if (buttonId == 1) {return "Blackberry";}
+  else if (buttonId == 2) {return "Caramel";}
+  else if (buttonId == 3) {return "Walnut";}
+  else if (buttonId == 4) {return "Original (Gluten Free)";}
+  else if (buttonId == 5) {return "Pumpkin Spice";}
+}
+
+/* GLAZE VALUE FINDER */
+function glazeSelection(buttonId) {
   var temp = document.getElementsByClassName("select-glaze");
-  var glaze_selection = temp[glazeId];
+  var glaze_selection = temp[buttonId];
   var glaze_answer = glaze_selection.value;
   return glaze_answer;
 }
 
-/* QUANTITY SELECTOR */
+/* ADD TO CART BUTTON */
+function addToCart(buttonId) { 
+
+  //FINDING ORDER ITEM VALUES
+  var glaze = glazeSelection(buttonId);
+  var quantity = quantitySelection(buttonId);
+  var flavor = flavorSelection(buttonId);
+
+  console.log(quantitySelection(buttonId));
+  console.log(flavorSelection(buttonId));
+  console.log(glazeSelection(buttonId));
+  
+  //CREATE NEW ITEM
+  newItem =  new CartItem(flavor, glaze, quantity);
+  //ADD ITEM TO ORDERLIST
+  orderList.push(newItem);
+  //UPATE LOCAL STORAGE WITH LIST
+  localStorage.setItem("orderList", JSON.stringify(orderList));
+
+  // addProductCardToCart(glaze, flavor);
+  createCartItem(orderList[orderList.length], orderList-1);
+  document.getElementById("cart-products").appendChild(element);
+  
+  console.log(orderList);
+  openNav();
+}
+
+
 
 
 /* ADDING ITEM TO THE ORDER LIST */
 function addItemToCart(flavor, glazeId) {
+  //check that glaze is selected 
+  //respond with error if glaze is not selected
+  
+  //check that quantity is selected
+  //respond with error if quantity is not selected
+  
+  //add item to orderList + cart
+
   var glaze = glazeSelection(glazeId);
   var flavor = flavor;
   var newOrderItem = new CartItem(flavor, glaze);
