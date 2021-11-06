@@ -8,28 +8,28 @@ if(savedCart != null){
 else{
   orderList = []; 
 }
-console.log(orderList);
 
+console.log(orderList.length);
 
-/* PLACEHOLDER TEXT FOR CART */
+/* ONLOAD FILL THE CART WITH ITEMS */
+function fillCart() {
+  for (let i = 0; i < orderList.length; i++) {
+    element = createCartItem(orderList[i], i+1);
+    document.getElementById("cart-products").appendChild(element);
+    console.log("item-added");
+  }
+  console.log("cart-filled");
+}
+
+/* PLACEHOLDER ELEMENT FOR EMPTY CART */
 var cartEmptyText = document.createElement('p');
 cartEmptyText.textContent = "Your cart is currently empty."
 cartEmptyText.className += "placeholder-text";
 
-
-/* OPEN AND FILL CART WITH ITEMS */
+/* OPEN NAVIGATION */
 function openNav() {
   document.getElementById("mySidepanel").style.width = "500px";
   console.log("cart-open");
-
-  if(orderList.length == 0) {
-    //insert placeholder text into the cart
-    document.getElementById("cart-products").appendChild(element);
-  }
-  else {
-    //add orderList items as divs to the dom in the cart.
-    //fillCartItems();
-  }
 }
 
 /* CLOSE CART */
@@ -73,8 +73,9 @@ function addItemToCart(flavor, glazeId) {
 /* ADD THE PRODUCT TO THE CART DIV */
 function addProductCardToCart(glaze, flavor) {
   var element = document.createElement('div');
+  element.className = "cart-item";
   element.id = "order-" + orderList.length; 
-  element.className += "add-product-to-cart";
+  
 
   document.getElementById("cart-products").appendChild(element);
 
@@ -107,7 +108,7 @@ function removeProductFromCart() {
   orderList.splice(removeIndex -1, 1);
   console.log(orderList);
 
-  localStorage.setItem(orderList, JSON.stringify(orderList));
+  localStorage.setItem('orderList', JSON.stringify(orderList));
 }
 
 
@@ -131,3 +132,38 @@ function changeFlavorInformation(flavor) {
 
 
 
+
+/* CREATING A DIV FOR A CART ITEM */
+function createCartItem(cartItem, i) {
+  //creates a div for the order item
+  var newItem = document.createElement('div');
+  newItem.id = "order-" + i; 
+  newItem.className = "cart-item-" + orderList.length;
+  document.getElementById("cart-products").appendChild(newItem);
+
+  //add h3 for flavor of the order item 
+  var order_flavor = document.createElement('h3');
+  order_flavor.textContent = "Flavor: " + cartItem.flavor;
+  document.getElementById(newItem.id).appendChild(order_flavor);
+
+  //add p for the glaze of the order item
+  var order_glaze = document.createElement('p');
+  order_glaze.textContent = "Glaze: " + cartItem.glaze;
+  document.getElementById(newItem.id).appendChild(order_glaze);
+
+  //add the quantity of the order
+
+  //add the remove button
+  let newButton = document.createElement('button');
+  newButton.id = "remove-button-" + i;
+  newButton.innerText = 'remove';
+  document.getElementById(newItem.id).appendChild(newButton);
+  document.getElementById(newButton.id).onclick = removeProductFromCart;
+
+  return newItem;
+}
+
+
+
+// ADD CREATECARTITEM TO THE CART-PRODUCTS DIV
+// document.getElementById("cart-products").appendChild(element);
