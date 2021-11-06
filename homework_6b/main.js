@@ -54,6 +54,9 @@ function glazeSelection(glazeId) {
   return glaze_answer;
 }
 
+/* QUANTITY SELECTOR */
+
+
 /* ADDING ITEM TO THE ORDER LIST */
 function addItemToCart(flavor, glazeId) {
   var glaze = glazeSelection(glazeId);
@@ -90,48 +93,12 @@ function addProductCardToCart(glaze, flavor) {
   document.getElementById(element.id).appendChild(order_glaze);
 
   let newButton = document.createElement('button');
+  newButton.classList.add("remove-cart-item");
   newButton.id = "remove-button-" + orderList.length;
   newButton.innerText = 'remove';
   document.getElementById(element.id).appendChild(newButton);
   document.getElementById(newButton.id).onclick = removeProductFromCart;
 }
-
-/* CLICKING ON THE REMOVE BUTTON TO REMOVE FROM DIV */
-function removeProductFromCart() {
-  console.log("remove-item");
-  console.log(this.id);
-  order_div = this.parentNode;
-  order_div.remove()
-  //remove the cartItem from the master cart list
-  removeIndex = this.id.slice(-1);
-  console.log(removeIndex - 1);
-  orderList.splice(removeIndex -1, 1);
-  console.log(orderList);
-
-  localStorage.setItem('orderList', JSON.stringify(orderList));
-}
-
-
-/* PRODUCT PAGE -- CHANGE FLAVOR INFORMATION BASED ON SELECTION */
-function changeFlavorInformation(flavor) {
-  var description = document.getElementById("panel-flavor-description")
-  if (flavor == 'original') { 
-    description.innerHTML = "Our original roles give you the classic taste of cozy , comfort. We specialize in these rolls. ";
-  } else if (flavor == 'gf'){
-    description.innerHTML = "Our gluten free rolls might be just right for you!";
-  } else if (flavor == 'blackberry'){
-    description.innerHTML = "Blackberries fresh from our very own garden. This roll is refreshing and berry good!";
-  } else if (flavor == 'caramel'){
-    description.innerHTML = "Creamy goodness will takeover you when you try our caramel roll. The sweetest roll on our menu.";
-  } else if (flavor == 'walnut'){
-    description.innerHTML = "Are you a nutty fan? Well this takes our delicious cinnamon goodness and combines it with some fresh walnuts imported from somewhere important.";
-  } else if (flavor == 'pk'){
-    description.innerHTML = "Bringing you a taste of the fall through our favorite pumpkin spice roll. Taste the goodness today!";
-  }
-}
-
-
-
 
 /* CREATING A DIV FOR A CART ITEM */
 function createCartItem(cartItem, i) {
@@ -155,6 +122,7 @@ function createCartItem(cartItem, i) {
 
   //add the remove button
   let newButton = document.createElement('button');
+  newButton.classList.add("remove-cart-item");
   newButton.id = "remove-button-" + i;
   newButton.innerText = 'remove';
   document.getElementById(newItem.id).appendChild(newButton);
@@ -163,7 +131,34 @@ function createCartItem(cartItem, i) {
   return newItem;
 }
 
+/* CLICK ON REMOVE BUTTON TO REMOVE FROM DIV */
+function removeProductFromCart() {
+  order_div = this.parentNode;
+  order_div.remove()
+  //remove the cartItem from the master cart list
+  removeIndex = this.id.slice(-1);
+  
+  orderList.splice(removeIndex -1, 1);
+  localStorage.setItem('orderList', JSON.stringify(orderList));
+  
+  console.log("item-removed");
+}
 
 
-// ADD CREATECARTITEM TO THE CART-PRODUCTS DIV
-// document.getElementById("cart-products").appendChild(element);
+/* PRODUCT PAGE -- CHANGE FLAVOR INFORMATION BASED ON SELECTION */
+function changeFlavorInformation(flavor) {
+  var description = document.getElementById("panel-flavor-description")
+  if (flavor == 'original') { 
+    description.innerHTML = "Our original roles give you the classic taste of cozy , comfort. We specialize in these rolls. ";
+  } else if (flavor == 'gf'){
+    description.innerHTML = "Our gluten free rolls might be just right for you!";
+  } else if (flavor == 'blackberry'){
+    description.innerHTML = "Blackberries fresh from our very own garden. This roll is refreshing and berry good!";
+  } else if (flavor == 'caramel'){
+    description.innerHTML = "Creamy goodness will takeover you when you try our caramel roll. The sweetest roll on our menu.";
+  } else if (flavor == 'walnut'){
+    description.innerHTML = "Are you a nutty fan? Well this takes our delicious cinnamon goodness and combines it with some fresh walnuts imported from somewhere important.";
+  } else if (flavor == 'pk'){
+    description.innerHTML = "Bringing you a taste of the fall through our favorite pumpkin spice roll. Taste the goodness today!";
+  }
+}

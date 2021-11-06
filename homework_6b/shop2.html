@@ -62,11 +62,19 @@
                     </select>
                     <label><span class="asterick">*</span>Quantity</label>
                     <br>
-                    <div class="quantities">
-                        <div class="cir">1</div>
-                        <div class="cir">3</div>
-                        <div class="cir">6</div>
-                        <div class="cir">12</div>
+                    <div class="quantities-container">
+                        <form class="form cf">
+                          <section class="plan cf">
+                            <input type="radio" name="radio1" id="Q1" value="free">
+                            <label class="label four col" for="Q1">1</label>
+                            <input type="radio" name="radio1" id="Q2" value="basic" checked>
+                            <label class="basic-label four col" for="Q2">3</label>
+                            <input type="radio" name="radio1" id="Q3" value="premium">
+                            <label class="premium-label four col" for="Q3">6</label>
+                            <input type="radio" name="radio1" id="Q4" value="premium">
+                            <label class="soemthing four col" for="Q4">12</label>
+                          </section>
+                        </form>
                     </div>
                     <div class="price">
                         $5.00
