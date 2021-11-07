@@ -78,7 +78,7 @@ function glazeSelection(buttonId) {
 /* ADD TO CART BUTTON */
 function addToCart(buttonId) { 
 
-  //FINDING ORDER ITEM VALUES
+  //FINDING ORDER ITEM INFORMATION
   var glaze = glazeSelection(buttonId);
   var quantity = quantitySelection(buttonId);
   var flavor = flavorSelection(buttonId);
@@ -94,38 +94,9 @@ function addToCart(buttonId) {
   //UPATE LOCAL STORAGE WITH LIST
   localStorage.setItem("orderList", JSON.stringify(orderList));
 
-  // addProductCardToCart(glaze, flavor);
-  createCartItem(orderList[orderList.length], orderList-1);
-  document.getElementById("cart-products").appendChild(element);
-  
-  console.log(orderList);
-  openNav();
-}
-
-
-
-
-/* ADDING ITEM TO THE ORDER LIST */
-function addItemToCart(flavor, glazeId) {
-  //check that glaze is selected 
-  //respond with error if glaze is not selected
-  
-  //check that quantity is selected
-  //respond with error if quantity is not selected
-  
-  //add item to orderList + cart
-
-  var glaze = glazeSelection(glazeId);
-  var flavor = flavor;
-  var newOrderItem = new CartItem(flavor, glaze);
-  
-  orderList.push(newOrderItem);
-  localStorage.setItem("orderList", JSON.stringify(orderList));
-
   addProductCardToCart(glaze, flavor);
   
   console.log(orderList);
-  
   openNav();
 }
 
@@ -135,7 +106,6 @@ function addProductCardToCart(glaze, flavor) {
   element.className = "cart-item";
   element.id = "order-" + orderList.length; 
   
-
   document.getElementById("cart-products").appendChild(element);
 
   var order_flavor = document.createElement('h3');
@@ -153,7 +123,7 @@ function addProductCardToCart(glaze, flavor) {
   newButton.id = "remove-button-" + orderList.length;
   newButton.innerText = 'remove';
   document.getElementById(element.id).appendChild(newButton);
-  document.getElementById(newButton.id).onclick = removeProductFromCart;
+  document.getElementById(newButton.id).onclick = removeProduct;
 }
 
 /* CREATING A DIV FOR A CART ITEM */
@@ -182,22 +152,24 @@ function createCartItem(cartItem, i) {
   newButton.id = "remove-button-" + i;
   newButton.innerText = 'remove';
   document.getElementById(newItem.id).appendChild(newButton);
-  document.getElementById(newButton.id).onclick = removeProductFromCart;
+  document.getElementById(newButton.id).onclick = removeProduct;
 
   return newItem;
 }
 
 /* CLICK ON REMOVE BUTTON TO REMOVE FROM DIV */
-function removeProductFromCart() {
+function removeProduct() {
   order_div = this.parentNode;
   order_div.remove()
+  
   //remove the cartItem from the master cart list
   removeIndex = this.id.slice(-1);
   
-  orderList.splice(removeIndex -1, 1);
+  orderList.splice(removeIndex-1, 1);
   localStorage.setItem('orderList', JSON.stringify(orderList));
   
   console.log("item-removed");
+  console.log(orderList.length);
 }
 
 
