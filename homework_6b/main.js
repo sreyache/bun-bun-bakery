@@ -21,6 +21,13 @@ function fillCart() {
   console.log("cart-filled");
 }
 
+function emptyCart() {
+  parent = document.getElementById("cart-products");
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 /* PLACEHOLDER ELEMENT FOR EMPTY CART */
 var cartEmptyText = document.createElement('p');
 cartEmptyText.textContent = "Your cart is currently empty."
@@ -89,41 +96,17 @@ function addToCart(buttonId) {
   
   //CREATE NEW ITEM
   newItem =  new CartItem(flavor, glaze, quantity);
+  
   //ADD ITEM TO ORDERLIST
   orderList.push(newItem);
+  
   //UPATE LOCAL STORAGE WITH LIST
   localStorage.setItem("orderList", JSON.stringify(orderList));
 
-  addProductCardToCart(glaze, flavor);
+  createCartItem(newItem, orderList.length);
   
   console.log(orderList);
   openNav();
-}
-
-/* ADD THE PRODUCT TO THE CART DIV */
-function addProductCardToCart(glaze, flavor) {
-  var element = document.createElement('div');
-  element.className = "cart-item";
-  element.id = "order-" + orderList.length; 
-  
-  document.getElementById("cart-products").appendChild(element);
-
-  var order_flavor = document.createElement('h3');
-  order_flavor.textContent = "Flavor: " + flavor;
-
-  document.getElementById(element.id).appendChild(order_flavor);
-
-  var order_glaze = document.createElement('p');
-  order_glaze.textContent = "Glaze: " + glaze;
-
-  document.getElementById(element.id).appendChild(order_glaze);
-
-  let newButton = document.createElement('button');
-  newButton.classList.add("remove-cart-item");
-  newButton.id = "remove-button-" + orderList.length;
-  newButton.innerText = 'remove';
-  document.getElementById(element.id).appendChild(newButton);
-  document.getElementById(newButton.id).onclick = removeProduct;
 }
 
 /* CREATING A DIV FOR A CART ITEM */
@@ -131,28 +114,47 @@ function createCartItem(cartItem, i) {
   //creates a div for the order item
   var newItem = document.createElement('div');
   newItem.id = "order-" + i; 
-  newItem.className = "cart-item-" + orderList.length;
+  newItem.className = "cart-item";
   document.getElementById("cart-products").appendChild(newItem);
 
-  //add h3 for flavor of the order item 
+  //create div for product details
+  var details = document.createElement('div');
+  details.classList.add("order-details");
+  details.id = "details-" + i;
+  document.getElementById(newItem.id).appendChild(details);
+
+  // //add h3 for flavor of the order item 
   var order_flavor = document.createElement('h3');
   order_flavor.textContent = "Flavor: " + cartItem.flavor;
-  document.getElementById(newItem.id).appendChild(order_flavor);
+  document.getElementById(details.id).appendChild(order_flavor);
 
-  //add p for the glaze of the order item
+  // //add p for the glaze of the order item
   var order_glaze = document.createElement('p');
   order_glaze.textContent = "Glaze: " + cartItem.glaze;
-  document.getElementById(newItem.id).appendChild(order_glaze);
+  document.getElementById(details.id).appendChild(order_glaze);
 
   //add the quantity of the order
+  var order_quantity = document.createElement('p');
+  order_quantity.textContent = "Quantity: " + cartItem.quantity;
+  document.getElementById(details.id).appendChild(order_quantity);
+
+  //create div for remove
+  var removeButton = document.createElement('div');
+  removeButton.classList.add("remove-button");
+  removeButton.id = "remove-" + i;
+  document.getElementById(newItem.id).appendChild(removeButton);
 
   //add the remove button
   let newButton = document.createElement('button');
   newButton.classList.add("remove-cart-item");
   newButton.id = "remove-button-" + i;
-  newButton.innerText = 'remove';
-  document.getElementById(newItem.id).appendChild(newButton);
+  newButton.innerText = 'Remove';
+  document.getElementById(removeButton.id).appendChild(newButton);
   document.getElementById(newButton.id).onclick = removeProduct;
+
+  //
+  var split = document.createElement('hr');
+  document.getElementById(newItem.id).appendChild(split);
 
   return newItem;
 }
@@ -170,6 +172,8 @@ function removeProduct() {
   
   console.log("item-removed");
   console.log(orderList.length);
+  emptyCart();
+  fillCart();
 }
 
 

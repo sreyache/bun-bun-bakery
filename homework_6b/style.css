@@ -476,12 +476,7 @@ nav {
     display: block;
     transition: 0.3s;
   }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidepanel a:hover {
-    color: #f1f1f1;
-  }
-  
+    
   /* Position and style the close button (top right corner) */
   .sidepanel .closebtn {
     position: absolute;
@@ -490,21 +485,6 @@ nav {
     font-size: 36px;
     margin-left: 50px;
   }
-  
-  /* Style the button that is used to open the sidepanel */
-  .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-  }
-  
-  .openbtn:hover {
-    background-color: #444;
-  }
-
 
   #cart-header {
       align-content: center;
@@ -531,6 +511,31 @@ nav {
   .placeholder-text {
       text-align: center;
       margin: 20px;
+  }
+
+  .cart-item { 
+      display:grid;
+      grid-template-columns: 70% 30%;
+  }
+
+  .remove-cart-item {
+    font-family: 'Roboto', sans-serif;;
+    font-style: lighter;
+    font-weight: lighter;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    color: red;
+    
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .remove-button {
+    position: relative;
   }
 
   /* WISHLIST STYLING */
@@ -656,4 +661,5 @@ nav {
 
   }
   
+
  
