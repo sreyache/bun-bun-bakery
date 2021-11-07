@@ -31,7 +31,7 @@
                 <li class="nav_item"><a id="active" href="temp2.html">PRODUCT</a></li>
                 <li class="nav_item" id="wishlist-logo"><a href="wishlist.html"><img src="Assets/wishlist-icon.png" alt="wishlist-logo" class="logo"/></a></li>
                 <li class="nav_item" id="cart-logo"><img src="Assets/cart-vector.svg" alt="cart-logo" class="logo" onclick="openNav()"/></li>
-                <li class="nav_item"><button class="order-now-button">ORDER NOW</button></li>
+                <li class="nav_item"><button class="order-now-button"><a href="shop2.html">ORDER NOW</a></button></li>
             </ul>
         </nav>
     </header>
@@ -57,11 +57,19 @@
             <h3>Glaze</h3>
             <p id="panel-description">Sugar-Milk | Vanilla-Milk | Double Chocolate</p>
             <h3>Quantities</h3>
-            <div class="quantities" id="product-quantities">
-                <div class="cir">1</div>
-                <div class="cir">3</div>
-                <div class="cir">6</div>
-                <div class="cir">12</div>
+            <div class="quantities-container">
+                <form class="form cf">
+                  <section class="plan cf">
+                    <input type="radio" name="temp" id="temp-1" value="1">
+                    <label class="label four col" for="temp-1">1</label>
+                    <input type="radio" name="temp" id="temp-2" value="3">
+                    <label class="basic-label four col" for="temp-2">3</label>
+                    <input type="radio" name="temp" id="temp-3" value="6">
+                    <label class="premium-label four col" for="temp-3">6</label>
+                    <input type="radio" name="temp" id="temp-4" value="12">
+                    <label class="soemthing four col" for="temp-4">12</label>
+                  </section>
+                </form>
             </div>
             <h3>Description</h3>
             <p id="panel-flavor-description">This is one of our most popular flavors.</p>

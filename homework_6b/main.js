@@ -35,7 +35,7 @@ cartEmptyText.className += "placeholder-text";
 
 /* OPEN NAVIGATION */
 function openNav() {
-  document.getElementById("mySidepanel").style.width = "500px";
+  document.getElementById("mySidepanel").style.width = "400px";
   console.log("cart-open");
 }
 
